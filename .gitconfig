@@ -1,0 +1,19 @@
+[alias]
+    recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n${1-10}; }; f"
+	rb = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format=%(refname:short)
+	branches = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format=%(refname:short)
+    co = checkout -
+    ff = push --force-with-lease
+    rb = rebase -i origin/master
+    cm = commit -m
+    st = status
+    aa = add -A
+    cma = commit --amend --no-edit
+    r  = reset HEAD~1
+    cp = cherry-pick
+    
+[core]
+	editor = vim
+[user]
+	name = Joe Rodman
+	email = jrodman@marq.com
