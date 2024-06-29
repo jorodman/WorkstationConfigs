@@ -9,8 +9,6 @@
     st = status
     aa = add -A
     cma = commit --amend --no-edit
-    rba = rebase --abort
-    rbc = rebase --continue
     r  = reset HEAD~1
     cp = cherry-pick
     
@@ -19,5 +17,3 @@
 [user]
 	name = Joe Rodman
 	email = josephrodman5@gmail.com
-[push]
-	default = current
