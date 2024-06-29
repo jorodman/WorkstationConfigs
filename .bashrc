@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -95,8 +95,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias press='cd ~/press/main'
 alias branches='git branches'
+alias wp='echo /mnt/c/Users/josep'
+alias alias-list='grep '^alias' ~/.bashrc'
+alias cp-vim='cp ~/repos/WorkstationConfigs/.vimrc ~/.vimrc'
+alias cp-bash='cp ~/repos/WorkstationConfigs/.bashrc ~/.bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,3 +124,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PS1="\[\e[0;31m\]\u@\h \[\e[0;32m\]\w\[\e[0m\] $ "
+export LS_COLORS="di=32"  # Directory color to greeni
