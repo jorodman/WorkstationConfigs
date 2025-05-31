@@ -28,6 +28,11 @@ alias shopify-serve='http-server ~/redo/redo/shopify-app/extensions/theme-extens
 alias gl="git log -1"
 alias glx="git log"
 alias rbf="git fetch && git rb"
+alias temporal="bazel run services -- temporal"
+alias webhooks="ngrok http localhost:8888"
+alias kill-bazel=pkill ^bazel
+alias order='bazel run redo/manage:place-order'
+alias kill-redo=~/kill-redo-processes.sh
 
 alias work='cd ${WORK_PATH}'
 alias personal='cd ${PERSONAL_PATH}'
@@ -38,10 +43,13 @@ alias git-rt='joe-custom-git-extension restore-tracked'
 alias git-at='joe-custom-git-extension add-tracked'
 alias git-au='joe-custom-git-extension add-untracked'
 
+alias graphql-gen='bazel run "//tools/graphql:gen"'
+
 
 # WORK STUFF
 alias lint='bazel run lint'
 alias lint2='bazel run //tools/lint:tslint_test'
+alias lint3='bazel run @//redo/server:mongoose_types'
 alias run='bazel run services'
 
 # Load Git completion
